@@ -1,0 +1,34 @@
+# Source files
+src/
+
+# Examples
+examples/
+
+# Scripts
+scripts/
+
+# Tests and coverage
+coverage/
+*.test.ts
+*.spec.ts
+
+# Config files
+tsconfig.json
+tsconfig.eslint.json
+vitest.config.ts
+eslint.config.js
+.prettierrc
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+
+# Project files
+PROJECT_SUMMARY.md
+
+# Node
+node_modules/
