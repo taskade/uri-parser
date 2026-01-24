@@ -516,11 +516,6 @@ export function validateUriAst(ast: UriAst): void {
     throw new Error('Invariant violation: path must always exist');
   }
 
-  // Invariant: tokens span full input exactly once (if tokens are provided)
-  if (ast.tokens && ast.tokens.length === 0) {
-    throw new Error('Invariant violation: tokens must not be empty if provided');
-  }
-
   // Invariant: scheme structure
   if (ast.scheme) {
     if (ast.scheme.kind !== 'scheme') {
