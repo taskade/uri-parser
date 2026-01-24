@@ -15,7 +15,7 @@ export type TextNode = {
 export type Scheme = {
   kind: 'scheme';
   name: TextNode; // e.g., "http"
-  colon?: Token; // ':'
+  colonToken?: Token; // ':' - optional for handcrafting
   tokens?: Token[]; // full span tokens
 };
 
@@ -49,7 +49,7 @@ export type Authority = {
  */
 export type Query = {
   kind: 'query';
-  delimiter?: Token; // '?'
+  delimiterToken?: Token; // '?' - optional for handcrafting
   value: TextNode; // query string content (without '?')
   tokens?: Token[]; // full span tokens including delimiter
 };
@@ -59,7 +59,7 @@ export type Query = {
  */
 export type Fragment = {
   kind: 'fragment';
-  delimiter?: Token; // '#'
+  delimiterToken?: Token; // '#' - optional for handcrafting
   value: TextNode; // fragment content (without '#')
   tokens?: Token[]; // full span tokens including delimiter
 };

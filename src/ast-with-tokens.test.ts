@@ -51,7 +51,7 @@ describe('AST with Tokens', () => {
       expect(ast.query).toBeDefined();
       expect(ast.query).toHaveProperty('kind');
       expect(ast.query?.kind).toBe('query');
-      expect(ast.query).toHaveProperty('delimiter');
+      expect(ast.query).toHaveProperty('delimiterToken');
       expect(ast.query).toHaveProperty('value');
       expect(ast.query).toHaveProperty('tokens');
       expect(ast.query?.value.text).toBe('key=value&foo=bar');
@@ -63,7 +63,7 @@ describe('AST with Tokens', () => {
       expect(ast.fragment).toBeDefined();
       expect(ast.fragment).toHaveProperty('kind');
       expect(ast.fragment?.kind).toBe('fragment');
-      expect(ast.fragment).toHaveProperty('delimiter');
+      expect(ast.fragment).toHaveProperty('delimiterToken');
       expect(ast.fragment).toHaveProperty('value');
       expect(ast.fragment).toHaveProperty('tokens');
       expect(ast.fragment?.value.text).toBe('section');

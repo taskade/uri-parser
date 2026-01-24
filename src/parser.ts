@@ -148,7 +148,7 @@ class Parser {
     return {
       kind: 'scheme',
       name: this.makeTextNode(schemeToken.value, [schemeToken]),
-      colon: colonToken,
+      colonToken: colonToken,
       tokens: [schemeToken, colonToken],
     };
   }
@@ -407,7 +407,7 @@ class Parser {
       const queryPath = this.parsePath(true); // Allow @ and : in query strings
       query = {
         kind: 'query',
-        delimiter: questionMark,
+        delimiterToken: questionMark,
         value: queryPath,
         tokens: [questionMark, ...(queryPath.tokens ?? [])],
       };
@@ -418,7 +418,7 @@ class Parser {
       const fragmentPath = this.parsePath(true); // Allow @ and : in fragments
       fragment = {
         kind: 'fragment',
-        delimiter: hashToken,
+        delimiterToken: hashToken,
         value: fragmentPath,
         tokens: [hashToken, ...(fragmentPath.tokens ?? [])],
       };

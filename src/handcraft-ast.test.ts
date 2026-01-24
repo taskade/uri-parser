@@ -31,7 +31,7 @@ describe('Handcrafting AST without tokens', () => {
     expect(scheme.kind).toBe('scheme');
     expect(scheme.name.text).toBe('http');
     expect(scheme.tokens).toBeUndefined();
-    expect(scheme.colon).toBeUndefined();
+    expect(scheme.colonToken).toBeUndefined();
   });
 
   it('should allow creating an Authority without tokens', () => {
@@ -61,7 +61,7 @@ describe('Handcrafting AST without tokens', () => {
     expect(query.kind).toBe('query');
     expect(query.value.text).toBe('key=value');
     expect(query.tokens).toBeUndefined();
-    expect(query.delimiter).toBeUndefined();
+    expect(query.delimiterToken).toBeUndefined();
   });
 
   it('should allow creating a Fragment without tokens', () => {
@@ -76,7 +76,7 @@ describe('Handcrafting AST without tokens', () => {
     expect(fragment.kind).toBe('fragment');
     expect(fragment.value.text).toBe('section');
     expect(fragment.tokens).toBeUndefined();
-    expect(fragment.delimiter).toBeUndefined();
+    expect(fragment.delimiterToken).toBeUndefined();
   });
 
   it('should allow creating a simple UriAst without tokens', () => {
