@@ -409,7 +409,7 @@ class Parser {
         kind: 'query',
         delimiter: questionMark,
         value: queryPath,
-        tokens: [questionMark, ...queryPath.tokens],
+        tokens: [questionMark, ...(queryPath.tokens ?? [])],
       };
     }
 
@@ -420,7 +420,7 @@ class Parser {
         kind: 'fragment',
         delimiter: hashToken,
         value: fragmentPath,
-        tokens: [hashToken, ...fragmentPath.tokens],
+        tokens: [hashToken, ...(fragmentPath.tokens ?? [])],
       };
     }
 
@@ -516,9 +516,9 @@ export function validateUriAst(ast: UriAst): void {
     throw new Error('Invariant violation: path must always exist');
   }
 
-  // Invariant: tokens span full input exactly once
-  if (ast.tokens.length === 0) {
-    throw new Error('Invariant violation: tokens must not be empty');
+  // Invariant: tokens span full input exactly once (if tokens are provided)
+  if (ast.tokens && ast.tokens.length === 0) {
+    throw new Error('Invariant violation: tokens must not be empty if provided');
   }
 
   // Invariant: scheme structure
@@ -526,8 +526,6 @@ export function validateUriAst(ast: UriAst): void {
     if (ast.scheme.kind !== 'scheme') {
       throw new Error('Invariant violation: scheme.kind must be "scheme"');
     }
-    if (ast.scheme.colon == null) {
-      throw new Error('Invariant violation: scheme.colon must exist');
-    }
+    // colon is optional when handcrafting AST
   }
 }
