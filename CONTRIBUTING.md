@@ -77,3 +77,7 @@ This parser follows the temporal-parser philosophy:
 ## Questions?
 
 Feel free to open an issue for discussion!
+
+## Development notes
+
+This project was developed with LLM assistance (GPT 5.2 / Claude Sonnet 4.5), under human direction for design decisions, architecture, and verification. All code is tested and reviewed on a best-effort basis.

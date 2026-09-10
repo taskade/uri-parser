@@ -2,6 +2,25 @@
 
 A lexer and parser for URIs with support for various URL forms, built with compiler design principles.
 
+By [Stan Chang](https://lxcid.com/) ([@lxcid](https://github.com/lxcid)).
+
+[![npm](https://img.shields.io/npm/v/@taskade/uri-parser?style=flat-square&color=FF2D60)](https://www.npmjs.com/package/@taskade/uri-parser)
+[![npm downloads](https://img.shields.io/npm/dm/@taskade/uri-parser?style=flat-square)](https://www.npmjs.com/package/@taskade/uri-parser)
+[![CI](https://img.shields.io/github/actions/workflow/status/taskade/uri-parser/ci.yml?branch=main&style=flat-square)](https://github.com/taskade/uri-parser/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/github/license/taskade/uri-parser?style=flat-square)](./LICENSE.md)
+
+Sibling: [`@taskade/temporal-parser`](https://github.com/taskade/temporal-parser) (same compiler approach for ISO 8601 / RFC 3339 / IXDTF).
+
+## When to use this
+
+Use the platform `URL` / WHATWG parser unless you need a lossless AST, host-path (no scheme), network-path (`//host/...`), or a custom grammar on the same token stream.
+
+| Need | Use |
+| --- | --- |
+| Everyday resolve / normalize / `href` | [`URL`](https://developer.mozilla.org/en-US/docs/Web/API/URL) (WHATWG) |
+| Lossless AST, host-path, no-scheme, exposed lexer | **this package** |
+| Date/time strings | [`@taskade/temporal-parser`](https://github.com/taskade/temporal-parser) |
+
 ## Features
 
 - **Flexible parsing**: Handles absolute URLs, network-path URLs, host-path URLs, and relative paths
@@ -326,13 +345,13 @@ If you need different semantics, you can:
 - Extend or replace parts of the grammar
 - Apply your own normalization rules
 
+## Related
+
+- [`@taskade/temporal-parser`](https://github.com/taskade/temporal-parser) — same compiler approach for ISO 8601, RFC 3339, and IXDTF
+
 ## Contributing
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for development setup and guidelines.
-
-## Development
-
-This project was developed with LLM assistance (GPT 5.2/Claude Sonnet 4.5), under human direction for design decisions, architecture, and verification. All code is tested and reviewed on a best-effort basis.
 
 ## License
 
