@@ -1,6 +1,6 @@
 {
   "name": "@taskade/uri-parser",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A lexer/parser based URI parser for URLs with optional schemes and host detection",
   "type": "module",
   "main": "./dist/cjs/index.cjs",
