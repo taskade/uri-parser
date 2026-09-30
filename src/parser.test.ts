@@ -238,7 +238,7 @@ describe('parseUri', () => {
             text: 'http',
             tokens: [{ type: TokType.IDENT, value: 'http', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 4 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 4 },
           tokens: [
             { type: TokType.IDENT, value: 'http', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 4 },
@@ -274,7 +274,7 @@ describe('parseUri', () => {
           { type: TokType.IDENT, value: 'example.com', pos: 7 },
         ],
       });
-      expect(ast.scheme?.colon.type).toBe(TokType.Colon);
+      expect(ast.scheme?.colonToken?.type).toBe(TokType.Colon);
       validateUriAst(ast);
     });
 
@@ -290,7 +290,7 @@ describe('parseUri', () => {
             text: 'https',
             tokens: [{ type: TokType.IDENT, value: 'https', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 5 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 5 },
           tokens: [
             { type: TokType.IDENT, value: 'https', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 5 },
@@ -349,7 +349,7 @@ describe('parseUri', () => {
             text: 'http',
             tokens: [{ type: TokType.IDENT, value: 'http', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 4 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 4 },
           tokens: [
             { type: TokType.IDENT, value: 'http', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 4 },
@@ -381,7 +381,7 @@ describe('parseUri', () => {
         },
         query: {
           kind: 'query',
-          delimiter: { type: TokType.QuestionMark, value: '?', pos: 23 },
+          delimiterToken: { type: TokType.QuestionMark, value: '?', pos: 23 },
           value: {
             kind: 'text',
             text: 'query=1',
@@ -394,7 +394,7 @@ describe('parseUri', () => {
         },
         fragment: {
           kind: 'fragment',
-          delimiter: { type: TokType.Hash, value: '#', pos: 31 },
+          delimiterToken: { type: TokType.Hash, value: '#', pos: 31 },
           value: {
             kind: 'text',
             text: 'fragment',
@@ -433,7 +433,7 @@ describe('parseUri', () => {
             text: 'ftp',
             tokens: [{ type: TokType.IDENT, value: 'ftp', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 3 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 3 },
           tokens: [
             { type: TokType.IDENT, value: 'ftp', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 3 },
@@ -500,7 +500,7 @@ describe('parseUri', () => {
             text: 'mailto',
             tokens: [{ type: TokType.IDENT, value: 'mailto', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 6 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 6 },
           tokens: [
             { type: TokType.IDENT, value: 'mailto', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 6 },
@@ -541,7 +541,7 @@ describe('parseUri', () => {
             text: 'http',
             tokens: [{ type: TokType.IDENT, value: 'http', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 4 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 4 },
           tokens: [
             { type: TokType.IDENT, value: 'http', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 4 },
@@ -577,7 +577,7 @@ describe('parseUri', () => {
         },
         query: {
           kind: 'query',
-          delimiter: { type: TokType.QuestionMark, value: '?', pos: 29 },
+          delimiterToken: { type: TokType.QuestionMark, value: '?', pos: 29 },
           value: {
             kind: 'text',
             text: 'query@part:2',
@@ -600,7 +600,7 @@ describe('parseUri', () => {
         },
         fragment: {
           kind: 'fragment',
-          delimiter: { type: TokType.Hash, value: '#', pos: 42 },
+          delimiterToken: { type: TokType.Hash, value: '#', pos: 42 },
           value: {
             kind: 'text',
             text: 'frag@part:3',
@@ -713,7 +713,7 @@ describe('parseUri', () => {
             text: 'devbox',
             tokens: [{ type: TokType.IDENT, value: 'devbox', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 6 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 6 },
           tokens: [
             { type: TokType.IDENT, value: 'devbox', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 6 },
@@ -839,7 +839,7 @@ describe('parseUri', () => {
         },
         query: {
           kind: 'query',
-          delimiter: { type: TokType.QuestionMark, value: '?', pos: 16 },
+          delimiterToken: { type: TokType.QuestionMark, value: '?', pos: 16 },
           value: {
             kind: 'text',
             text: 'query',
@@ -852,7 +852,7 @@ describe('parseUri', () => {
         },
         fragment: {
           kind: 'fragment',
-          delimiter: { type: TokType.Hash, value: '#', pos: 22 },
+          delimiterToken: { type: TokType.Hash, value: '#', pos: 22 },
           value: {
             kind: 'text',
             text: 'fragment',
@@ -1021,7 +1021,7 @@ describe('parseUri', () => {
         },
         query: {
           kind: 'query',
-          delimiter: { type: TokType.QuestionMark, value: '?', pos: 5 },
+          delimiterToken: { type: TokType.QuestionMark, value: '?', pos: 5 },
           value: {
             kind: 'text',
             text: 'query=1',
@@ -1034,7 +1034,7 @@ describe('parseUri', () => {
         },
         fragment: {
           kind: 'fragment',
-          delimiter: { type: TokType.Hash, value: '#', pos: 13 },
+          delimiterToken: { type: TokType.Hash, value: '#', pos: 13 },
           value: {
             kind: 'text',
             text: 'fragment',
@@ -1123,7 +1123,7 @@ describe('parseUri', () => {
         },
         query: {
           kind: 'query',
-          delimiter: { type: TokType.QuestionMark, value: '?', pos: 4 },
+          delimiterToken: { type: TokType.QuestionMark, value: '?', pos: 4 },
           value: {
             kind: 'text',
             text: 'query',
@@ -1136,7 +1136,7 @@ describe('parseUri', () => {
         },
         fragment: {
           kind: 'fragment',
-          delimiter: { type: TokType.Hash, value: '#', pos: 10 },
+          delimiterToken: { type: TokType.Hash, value: '#', pos: 10 },
           value: {
             kind: 'text',
             text: 'fragment',
@@ -1172,7 +1172,7 @@ describe('parseUri', () => {
             text: 'http',
             tokens: [{ type: TokType.IDENT, value: 'http', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 4 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 4 },
           tokens: [
             { type: TokType.IDENT, value: 'http', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 4 },
@@ -1237,7 +1237,7 @@ describe('parseUri', () => {
             text: 'http',
             tokens: [{ type: TokType.IDENT, value: 'http', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 4 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 4 },
           tokens: [
             { type: TokType.IDENT, value: 'http', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 4 },
@@ -1321,7 +1321,7 @@ describe('parseUri', () => {
             text: 'http',
             tokens: [{ type: TokType.IDENT, value: 'http', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 4 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 4 },
           tokens: [
             { type: TokType.IDENT, value: 'http', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 4 },
@@ -1350,7 +1350,7 @@ describe('parseUri', () => {
         },
         query: {
           kind: 'query',
-          delimiter: { type: TokType.QuestionMark, value: '?', pos: 18 },
+          delimiterToken: { type: TokType.QuestionMark, value: '?', pos: 18 },
           value: {
             kind: 'text',
             text: '',
@@ -1382,7 +1382,7 @@ describe('parseUri', () => {
             text: 'http',
             tokens: [{ type: TokType.IDENT, value: 'http', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 4 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 4 },
           tokens: [
             { type: TokType.IDENT, value: 'http', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 4 },
@@ -1412,7 +1412,7 @@ describe('parseUri', () => {
         query: undefined,
         fragment: {
           kind: 'fragment',
-          delimiter: { type: TokType.Hash, value: '#', pos: 18 },
+          delimiterToken: { type: TokType.Hash, value: '#', pos: 18 },
           value: {
             kind: 'text',
             text: '',
@@ -1443,7 +1443,7 @@ describe('parseUri', () => {
             text: 'http',
             tokens: [{ type: TokType.IDENT, value: 'http', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 4 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 4 },
           tokens: [
             { type: TokType.IDENT, value: 'http', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 4 },
@@ -1472,7 +1472,7 @@ describe('parseUri', () => {
         },
         query: {
           kind: 'query',
-          delimiter: { type: TokType.QuestionMark, value: '?', pos: 18 },
+          delimiterToken: { type: TokType.QuestionMark, value: '?', pos: 18 },
           value: {
             kind: 'text',
             text: 'key1=value1&key2=value2',
@@ -1508,7 +1508,7 @@ describe('parseUri', () => {
             text: 'http',
             tokens: [{ type: TokType.IDENT, value: 'http', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 4 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 4 },
           tokens: [
             { type: TokType.IDENT, value: 'http', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 4 },
@@ -1566,7 +1566,7 @@ describe('parseUri', () => {
             text: 'https',
             tokens: [{ type: TokType.IDENT, value: 'https', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 5 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 5 },
           tokens: [
             { type: TokType.IDENT, value: 'https', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 5 },
@@ -1622,7 +1622,7 @@ describe('parseUri', () => {
             text: 'http',
             tokens: [{ type: TokType.IDENT, value: 'http', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 4 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 4 },
           tokens: [
             { type: TokType.IDENT, value: 'http', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 4 },
@@ -1682,7 +1682,7 @@ describe('parseUri', () => {
             text: 'http',
             tokens: [{ type: TokType.IDENT, value: 'http', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 4 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 4 },
           tokens: [
             { type: TokType.IDENT, value: 'http', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 4 },
@@ -1711,7 +1711,7 @@ describe('parseUri', () => {
         },
         query: {
           kind: 'query',
-          delimiter: { type: TokType.QuestionMark, value: '?', pos: 18 },
+          delimiterToken: { type: TokType.QuestionMark, value: '?', pos: 18 },
           value: {
             kind: 'text',
             text: '名前=値&キー=バリュー',
@@ -1747,7 +1747,7 @@ describe('parseUri', () => {
             text: 'http',
             tokens: [{ type: TokType.IDENT, value: 'http', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 4 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 4 },
           tokens: [
             { type: TokType.IDENT, value: 'http', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 4 },
@@ -1777,7 +1777,7 @@ describe('parseUri', () => {
         query: undefined,
         fragment: {
           kind: 'fragment',
-          delimiter: { type: TokType.Hash, value: '#', pos: 18 },
+          delimiterToken: { type: TokType.Hash, value: '#', pos: 18 },
           value: {
             kind: 'text',
             text: 'секция',
@@ -1812,7 +1812,7 @@ describe('parseUri', () => {
             text: 'ftp',
             tokens: [{ type: TokType.IDENT, value: 'ftp', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 3 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 3 },
           tokens: [
             { type: TokType.IDENT, value: 'ftp', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 3 },
@@ -1879,7 +1879,7 @@ describe('parseUri', () => {
             text: 'http',
             tokens: [{ type: TokType.IDENT, value: 'http', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 4 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 4 },
           tokens: [
             { type: TokType.IDENT, value: 'http', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 4 },
@@ -1939,7 +1939,7 @@ describe('parseUri', () => {
             text: 'http',
             tokens: [{ type: TokType.IDENT, value: 'http', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 4 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 4 },
           tokens: [
             { type: TokType.IDENT, value: 'http', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 4 },
@@ -1973,7 +1973,7 @@ describe('parseUri', () => {
         },
         query: {
           kind: 'query',
-          delimiter: { type: TokType.QuestionMark, value: '?', pos: 26 },
+          delimiterToken: { type: TokType.QuestionMark, value: '?', pos: 26 },
           value: {
             kind: 'text',
             text: 'lang=中文&page=1',
@@ -1986,7 +1986,7 @@ describe('parseUri', () => {
         },
         fragment: {
           kind: 'fragment',
-          delimiter: { type: TokType.Hash, value: '#', pos: 41 },
+          delimiterToken: { type: TokType.Hash, value: '#', pos: 41 },
           value: {
             kind: 'text',
             text: 'section-內容',
@@ -2092,7 +2092,7 @@ describe('parseUri', () => {
             text: 'mailto',
             tokens: [{ type: TokType.IDENT, value: 'mailto', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 6 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 6 },
           tokens: [
             { type: TokType.IDENT, value: 'mailto', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 6 },

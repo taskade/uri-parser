@@ -6,7 +6,7 @@ import type { Token } from './lexer-types.js';
 export type TextNode = {
   kind: 'text';
   text: string;
-  tokens: Token[];
+  tokens?: Token[];
 };
 
 /**
@@ -15,8 +15,8 @@ export type TextNode = {
 export type Scheme = {
   kind: 'scheme';
   name: TextNode; // e.g., "http"
-  colon: Token; // ':'
-  tokens: Token[]; // full span tokens
+  colonToken?: Token; // ':' - optional for handcrafting
+  tokens?: Token[]; // full span tokens
 };
 
 /**
@@ -41,7 +41,7 @@ export type Authority = {
   userinfo?: TextNode; // optional
   host: TextNode;
   port?: TextNode;
-  tokens: Token[]; // full span tokens
+  tokens?: Token[]; // full span tokens
 };
 
 /**
@@ -49,9 +49,9 @@ export type Authority = {
  */
 export type Query = {
   kind: 'query';
-  delimiter: Token; // '?'
+  delimiterToken?: Token; // '?' - optional for handcrafting
   value: TextNode; // query string content (without '?')
-  tokens: Token[]; // full span tokens including delimiter
+  tokens?: Token[]; // full span tokens including delimiter
 };
 
 /**
@@ -59,9 +59,9 @@ export type Query = {
  */
 export type Fragment = {
   kind: 'fragment';
-  delimiter: Token; // '#'
+  delimiterToken?: Token; // '#' - optional for handcrafting
   value: TextNode; // fragment content (without '#')
-  tokens: Token[]; // full span tokens including delimiter
+  tokens?: Token[]; // full span tokens including delimiter
 };
 
 /**
@@ -77,7 +77,7 @@ export type UriAst = {
   query?: Query; // "?<query>"
   fragment?: Fragment; // "#<fragment>"
 
-  tokens: Token[]; // full span tokens
+  tokens?: Token[]; // full span tokens
 };
 
 /**

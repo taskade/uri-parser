@@ -21,7 +21,7 @@ describe('URI Schemes', () => {
             text: 'mailto',
             tokens: [{ type: TokType.IDENT, value: 'mailto', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 6 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 6 },
           tokens: [
             { type: TokType.IDENT, value: 'mailto', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 6 },
@@ -61,7 +61,7 @@ describe('URI Schemes', () => {
             text: 'mailto',
             tokens: [{ type: TokType.IDENT, value: 'mailto', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 6 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 6 },
           tokens: [
             { type: TokType.IDENT, value: 'mailto', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 6 },
@@ -79,7 +79,7 @@ describe('URI Schemes', () => {
         },
         query: {
           kind: 'query',
-          delimiter: { type: TokType.QuestionMark, value: '?', pos: 23 },
+          delimiterToken: { type: TokType.QuestionMark, value: '?', pos: 23 },
           value: {
             kind: 'text',
             text: 'subject=Hello&body=World',
@@ -115,7 +115,7 @@ describe('URI Schemes', () => {
             text: 'mailto',
             tokens: [{ type: TokType.IDENT, value: 'mailto', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 6 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 6 },
           tokens: [
             { type: TokType.IDENT, value: 'mailto', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 6 },
@@ -159,7 +159,7 @@ describe('URI Schemes', () => {
             text: 'mailto',
             tokens: [{ type: TokType.IDENT, value: 'mailto', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 6 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 6 },
           tokens: [
             { type: TokType.IDENT, value: 'mailto', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 6 },
@@ -173,7 +173,7 @@ describe('URI Schemes', () => {
         },
         query: {
           kind: 'query',
-          delimiter: { type: TokType.QuestionMark, value: '?', pos: 7 },
+          delimiterToken: { type: TokType.QuestionMark, value: '?', pos: 7 },
           value: {
             kind: 'text',
             text: 'subject=Feedback',
@@ -208,7 +208,7 @@ describe('URI Schemes', () => {
             text: 'tel',
             tokens: [{ type: TokType.IDENT, value: 'tel', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 3 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 3 },
           tokens: [
             { type: TokType.IDENT, value: 'tel', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 3 },
@@ -242,7 +242,7 @@ describe('URI Schemes', () => {
             text: 'tel',
             tokens: [{ type: TokType.IDENT, value: 'tel', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 3 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 3 },
           tokens: [
             { type: TokType.IDENT, value: 'tel', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 3 },
@@ -278,7 +278,7 @@ describe('URI Schemes', () => {
             text: 'tel',
             tokens: [{ type: TokType.IDENT, value: 'tel', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 3 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 3 },
           tokens: [
             { type: TokType.IDENT, value: 'tel', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 3 },
@@ -314,7 +314,7 @@ describe('URI Schemes', () => {
             text: 'file',
             tokens: [{ type: TokType.IDENT, value: 'file', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 4 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 4 },
           tokens: [
             { type: TokType.IDENT, value: 'file', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 4 },
@@ -371,7 +371,7 @@ describe('URI Schemes', () => {
             text: 'file',
             tokens: [{ type: TokType.IDENT, value: 'file', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 4 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 4 },
           tokens: [
             { type: TokType.IDENT, value: 'file', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 4 },
@@ -432,7 +432,7 @@ describe('URI Schemes', () => {
             text: 'file',
             tokens: [{ type: TokType.IDENT, value: 'file', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 4 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 4 },
           tokens: [
             { type: TokType.IDENT, value: 'file', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 4 },
@@ -480,7 +480,7 @@ describe('URI Schemes', () => {
             text: 'data',
             tokens: [{ type: TokType.IDENT, value: 'data', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 4 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 4 },
           tokens: [
             { type: TokType.IDENT, value: 'data', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 4 },
@@ -520,7 +520,7 @@ describe('URI Schemes', () => {
             text: 'data',
             tokens: [{ type: TokType.IDENT, value: 'data', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 4 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 4 },
           tokens: [
             { type: TokType.IDENT, value: 'data', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 4 },
@@ -568,7 +568,7 @@ describe('URI Schemes', () => {
             text: 'data',
             tokens: [{ type: TokType.IDENT, value: 'data', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 4 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 4 },
           tokens: [
             { type: TokType.IDENT, value: 'data', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 4 },
@@ -604,7 +604,7 @@ describe('URI Schemes', () => {
             text: 'ftp',
             tokens: [{ type: TokType.IDENT, value: 'ftp', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 3 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 3 },
           tokens: [
             { type: TokType.IDENT, value: 'ftp', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 3 },
@@ -657,7 +657,7 @@ describe('URI Schemes', () => {
             text: 'ftp',
             tokens: [{ type: TokType.IDENT, value: 'ftp', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 3 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 3 },
           tokens: [
             { type: TokType.IDENT, value: 'ftp', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 3 },
@@ -727,7 +727,7 @@ describe('URI Schemes', () => {
             text: 'ftp',
             tokens: [{ type: TokType.IDENT, value: 'ftp', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 3 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 3 },
           tokens: [
             { type: TokType.IDENT, value: 'ftp', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 3 },
@@ -791,7 +791,7 @@ describe('URI Schemes', () => {
             text: 'ws',
             tokens: [{ type: TokType.IDENT, value: 'ws', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 2 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 2 },
           tokens: [
             { type: TokType.IDENT, value: 'ws', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 2 },
@@ -844,7 +844,7 @@ describe('URI Schemes', () => {
             text: 'wss',
             tokens: [{ type: TokType.IDENT, value: 'wss', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 3 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 3 },
           tokens: [
             { type: TokType.IDENT, value: 'wss', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 3 },
@@ -897,7 +897,7 @@ describe('URI Schemes', () => {
             text: 'ws',
             tokens: [{ type: TokType.IDENT, value: 'ws', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 2 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 2 },
           tokens: [
             { type: TokType.IDENT, value: 'ws', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 2 },
@@ -934,7 +934,7 @@ describe('URI Schemes', () => {
         },
         query: {
           kind: 'query',
-          delimiter: { type: TokType.QuestionMark, value: '?', pos: 26 },
+          delimiterToken: { type: TokType.QuestionMark, value: '?', pos: 26 },
           value: {
             kind: 'text',
             text: 'token=abc123',
@@ -975,7 +975,7 @@ describe('URI Schemes', () => {
             text: 'git',
             tokens: [{ type: TokType.IDENT, value: 'git', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 3 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 3 },
           tokens: [
             { type: TokType.IDENT, value: 'git', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 3 },
@@ -1032,7 +1032,7 @@ describe('URI Schemes', () => {
             text: 'git+ssh',
             tokens: [{ type: TokType.IDENT, value: 'git+ssh', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 7 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 7 },
           tokens: [
             { type: TokType.IDENT, value: 'git+ssh', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 7 },
@@ -1100,7 +1100,7 @@ describe('URI Schemes', () => {
             text: 'magnet',
             tokens: [{ type: TokType.IDENT, value: 'magnet', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 6 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 6 },
           tokens: [
             { type: TokType.IDENT, value: 'magnet', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 6 },
@@ -1114,7 +1114,7 @@ describe('URI Schemes', () => {
         },
         query: {
           kind: 'query',
-          delimiter: { type: TokType.QuestionMark, value: '?', pos: 7 },
+          delimiterToken: { type: TokType.QuestionMark, value: '?', pos: 7 },
           value: {
             kind: 'text',
             text: 'xt=urn:btih:abc123&dn=example',
@@ -1163,7 +1163,7 @@ describe('URI Schemes', () => {
             text: 'ssh',
             tokens: [{ type: TokType.IDENT, value: 'ssh', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 3 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 3 },
           tokens: [
             { type: TokType.IDENT, value: 'ssh', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 3 },
@@ -1220,7 +1220,7 @@ describe('URI Schemes', () => {
             text: 'ssh',
             tokens: [{ type: TokType.IDENT, value: 'ssh', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 3 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 3 },
           tokens: [
             { type: TokType.IDENT, value: 'ssh', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 3 },
@@ -1293,7 +1293,7 @@ describe('URI Schemes', () => {
             text: 'urn',
             tokens: [{ type: TokType.IDENT, value: 'urn', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 3 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 3 },
           tokens: [
             { type: TokType.IDENT, value: 'urn', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 3 },
@@ -1333,7 +1333,7 @@ describe('URI Schemes', () => {
             text: 'urn',
             tokens: [{ type: TokType.IDENT, value: 'urn', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 3 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 3 },
           tokens: [
             { type: TokType.IDENT, value: 'urn', pos: 0 },
             { type: TokType.Colon, value: ':', pos: 3 },
@@ -1375,7 +1375,7 @@ describe('URI Schemes', () => {
             text: 'myapp',
             tokens: [{ type: TokType.IDENT, value: 'myapp', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 5 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 5 },
         },
         authority: {
           kind: 'authority',
@@ -1397,7 +1397,7 @@ describe('URI Schemes', () => {
         },
         query: {
           kind: 'query',
-          delimiter: { type: TokType.QuestionMark, value: '?', pos: 14 },
+          delimiterToken: { type: TokType.QuestionMark, value: '?', pos: 14 },
           value: {
             kind: 'text',
             text: 'param=value',
@@ -1424,7 +1424,7 @@ describe('URI Schemes', () => {
             text: 'myapp',
             tokens: [{ type: TokType.IDENT, value: 'myapp', pos: 0 }],
           },
-          colon: { type: TokType.Colon, value: ':', pos: 5 },
+          colonToken: { type: TokType.Colon, value: ':', pos: 5 },
         },
         authority: undefined,
         path: {

@@ -178,13 +178,15 @@ The parser returns a rich AST where each component includes both its value and t
 - **Refactoring tools**: Modify specific URI parts
 - **Linting**: Validate with full context
 
+**Important:** Tokens are **optional** in the AST. The parser populates them automatically when parsing from strings, but you can create AST nodes without tokens for testing, code generation, or other use cases.
+
 ```typescript
 import { authorityValue, nodeValue, parseUri, schemeValue } from '@taskade/uri-parser';
 
 const uri = 'https://user@example.com:443/path?key=value#section';
 const ast = parseUri(uri);
 
-// Each component has value + tokens
+// Each component has value + tokens (populated by parser)
 console.log(schemeValue(ast.scheme)); // "https"
 console.log(ast.scheme?.tokens); // [{ type: 'IDENT', value: 'https', pos: 0 }, { type: 'Colon', value: ':', pos: 5 }]
 
@@ -201,6 +203,41 @@ console.log(nodeValue(ast.fragment)); // "section"
 // Access text fields directly if you don't need helper functions
 console.log(ast.scheme?.name.text); // "https"
 console.log(ast.path.text); // "/path"
+```
+
+### Handcrafting AST (without tokens)
+
+You can easily create AST nodes by hand without providing tokens:
+
+```typescript
+import type { UriAst } from '@taskade/uri-parser';
+import { stringifyUri } from '@taskade/uri-parser';
+
+// Create a simple AST for http://example.com/path
+const ast: UriAst = {
+  kind: 'uri',
+  scheme: {
+    kind: 'scheme',
+    name: {
+      kind: 'text',
+      text: 'http',
+    },
+  },
+  authority: {
+    kind: 'authority',
+    source: 'slashes',
+    host: {
+      kind: 'text',
+      text: 'example.com',
+    },
+  },
+  path: {
+    kind: 'text',
+    text: '/path',
+  },
+};
+
+console.log(stringifyUri(ast)); // "http://example.com/path"
 ```
 
 ### Using the Lexer
